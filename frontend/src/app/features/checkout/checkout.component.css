@@ -1,0 +1,26 @@
+.checkout-card {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: var(--background-color);
+    padding-top: 100px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .order-summary-card {
+    margin: 20px 0;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    cursor: pointer;
+    padding: 8px 0px;
+  }
+  

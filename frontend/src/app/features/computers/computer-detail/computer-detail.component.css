@@ -1,0 +1,101 @@
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+}
+
+.dialog-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px; /* To accommodate scrollbar */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  margin: 10px 0;
+}
+
+h3 {
+  margin-top: 10px;
+  color: var(--secondary-color);
+}
+
+.component-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.component-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.part-icon {
+  font-size: 36px;
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.component-info h4 {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}

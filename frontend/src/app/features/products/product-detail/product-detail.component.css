@@ -1,0 +1,25 @@
+.product-detail-container {
+    display: flex;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 2rem;
+    margin: 20px;
+    margin-top: 70px;
+  }
+  .content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  .content button:hover {
+    background-color: #0056b3;
+  }
+  
+img {
+  height: 250px;
+  width: 300px;
+  align-self: center;
+}

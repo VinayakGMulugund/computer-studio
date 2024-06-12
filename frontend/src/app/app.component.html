@@ -1,0 +1,25 @@
+<div><app-navbar [userLoggedIn]="userLoggedIn" style="position: fixed; width: 100%; z-index: 100;"></app-navbar></div>
+
+<!-- <div *ngIf="display"> -->
+<!-- <div class="home-container">
+    <div class="content">
+      <h1 class="header-title">Welcome to the World of PCs</h1>
+      <p>Discover our wide range of custom-built PCs or BUILD your own PC at <span class="studio-link" (click)="goToStudio()">studio</span>.</p>
+    </div>
+  </div>
+
+
+<div class="container-fluid" style="background-color: var(--background-color); min-height: 100vh;">
+  <div class="row">
+    <app-sidebar class="col-md-3"></app-sidebar>
+    <main class="col-md-9">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div> -->
+<!-- </div>
+<div *ngIf="!display">
+  <router-outlet></router-outlet>
+</div> -->
+
+<router-outlet></router-outlet>

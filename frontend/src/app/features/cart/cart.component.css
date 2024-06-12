@@ -1,0 +1,24 @@
+.cart-container {
+    display: flex;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+  .computer-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  .content button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,21 @@
+<div class="studio-container">
+  <h1>Build Your PC</h1>
+  <div class="component-card" *ngFor="let key of componentKeys">
+    <div class="card-content">
+      <div class="component-image" *ngIf="components[key]">
+        <img [src]="components[key]?.imageUrl" alt="{{ components[key]?.name }}">
+      </div>
+      <div class="component-info" *ngIf="components[key]">
+        <h3>{{ components[key]?.name }}</h3>
+        <p>{{ components[key]?.description }}</p>
+        <p>Price: {{ components[key]?.price | currency }}</p>
+      </div>
+      <div class="empty-card" *ngIf="!components[key]">
+        <h3>{{ getComponentName(key) }}</h3>
+      </div>
+      <button mat-raised-button color="primary" (click)="openDialog(key)">
+        {{ components[key] ? 'Update' : 'Select' }} {{ getComponentName(key) }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+
+<div class="cart-container">
+  <div class="content">
+    <h1>Your Cart</h1>
+    <div *ngFor="let computer of computers" class="computer-card">
+      <h2>{{ computer.name }}</h2>
+      <ul>
+        <li>{{ computer.body.name }}</li>
+        <li>{{ computer.cpu.name }}</li>
+        <li>{{ computer.gpu.name }}</li>
+        <li>{{ computer.motherboard.name }}</li>
+        <li>{{ computer.psu.name }}</li>
+        <li>{{ computer.ram.name }}</li>
+        <li>{{ computer.storage.name }}</li>
+
+
+      </ul>
+      <p>Total: {{ total }}</p>
+    </div>
+    <button routerLink="/checkout">Proceed to Checkout</button>
+  </div>
+</div>

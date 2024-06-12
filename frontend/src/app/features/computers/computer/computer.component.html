@@ -1,0 +1,13 @@
+<div class="card mb-3" 
+     [@cardHover]="hoverState" 
+     (mouseenter)="onMouseEnter()" 
+     (mouseleave)="onMouseLeave()"
+     (click)="openDialog()"
+     style="cursor: pointer;">
+  <img [src]="computer?.imageUrl" class="card-img-top" alt="Computer Image">
+  <div class="card-body">
+    <h5 class="card-title">{{ computer?.name }}</h5>
+    <p class="card-text">{{ computer?.description }}</p>
+    <p class="card-text"><small class="text-muted">Price: {{ computer?.total_price | currency }}</small></p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a routerLink="/">E-Commerce Platform</a>
+      </div>
+      <div class="navbar-links">
+        <a routerLink="/">Home</a>
+        <a routerLink="/products">Products</a>
+        <a *ngIf="userLoggedIn" routerLink="/studio">Studio</a>
+        <a *ngIf="userLoggedIn" routerLink="/cart">Cart</a>
+        <!-- <a routerLink="/checkout">Checkout</a> -->
+      </div>
+      <div>
+        <button *ngIf="!userLoggedIn" mat-button (click)="openLoginDialog()">Login</button>
+        <button *ngIf="!userLoggedIn" mat-button (click)="openRegisterDialog()">Register</button>
+        <button *ngIf="userLoggedIn" mat-button (click)="logout()">Logout</button>
+      </div>
+    </div>
+</nav>
+  

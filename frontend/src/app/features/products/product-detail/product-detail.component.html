@@ -1,0 +1,11 @@
+<div class="product-detail-container">
+  <!-- <app-sidebar></app-sidebar> -->
+  <div class="content">
+    <img class="mb-5" [src]="product.image">
+    <h1>{{ product.name }}</h1>
+    <p>Category: {{ product.category }}</p>
+    <p>Price: \${{ product.price }}</p>
+    <p>Description: {{ product.description }}</p>
+    <button (click)="addToCart(product)">Add to Studio</button>
+  </div>
+</div>

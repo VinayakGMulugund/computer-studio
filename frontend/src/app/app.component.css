@@ -1,0 +1,30 @@
+.home-container {
+    display: flex;
+    text-align: center;
+    background-color: #555155;
+    color: #fff1ff;
+  }
+
+.header-title {
+    margin-top: 100px;
+    margin-bottom:50px;
+
+}
+  .content {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+
+  .container-fluid {
+    padding-top: 20px;
+    background-color: var(--background-color);
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .studio-link {
+    text-decoration: underline;
+    cursor: pointer;
+  }

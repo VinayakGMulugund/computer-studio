@@ -1,0 +1,25 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <h2>{{ data.name }}</h2>
+    <button mat-icon-button class="close-button" (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="dialog-content">
+    <p>{{ data.description }}</p>
+    <h3>Price: {{ data.total_price | currency }}</h3>
+    <div class="component-details">
+      <div class="component-row" *ngFor="let part of computerParts">
+        <div class="component-info">
+          <h4><b >{{ part.name }}</b>: {{ getPartName(part.key) }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <button class="btn-primary p-2" style="width: 100%;" (click)="addToCart()">Add to cart</button>
+  </div>
+  <div class="dialog-footer">
+    <button mat-raised-button class="btn-primary" (click)="onClose()">Close</button>
+  </div>
+</div>
