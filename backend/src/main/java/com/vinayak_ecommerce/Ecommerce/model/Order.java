@@ -16,9 +16,9 @@ public class Order {
     @JoinColumn(name = "computer_id")
     private Computer computer;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 
     private String status;
     private Date date;
