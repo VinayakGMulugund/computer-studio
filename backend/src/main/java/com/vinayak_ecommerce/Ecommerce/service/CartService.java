@@ -41,6 +41,7 @@ public class CartService {
             throw new RuntimeException("Computer does not exist");
         }
         cart.getComputers().add(computer.get());
+        cart.setTotalPrice((long)(cart.getTotalPrice() + computer.get().getTotal_price()));
         return cartRepo.save(cart);
     }
 
@@ -55,16 +56,23 @@ public class CartService {
             throw new RuntimeException("Computer does not exist");
         }
         cart.get().getComputers().add(computer.get());
+        cart.get().setTotalPrice((long)(cart.get().getTotalPrice() + computer.get().getTotal_price()));
         return cartRepo.save(cart.get());
     }
 
     public Cart updateCart(Cart cart) {
+        long price = 0;
+        for (Computer computer : cart.getComputers()) {
+            price += (long) computer.getTotal_price();
+        }
+        cart.setTotalPrice(price);
         return cartRepo.save(cart);
     }
 
     public Cart clearCart() {
         Cart cart = userService.getCurrentUser().getCart();
         cart.getComputers().clear();
+        cart.setTotalPrice(0);
         return cartRepo.save(cart);
     }
 
@@ -75,6 +83,7 @@ public class CartService {
         }
 
         cart.get().getComputers().clear();
+        cart.get().setTotalPrice(0);
         return cartRepo.save(cart.get());
     }
 }
