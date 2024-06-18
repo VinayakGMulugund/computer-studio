@@ -2,6 +2,7 @@ package com.vinayak_ecommerce.Ecommerce.service;
 
 
 import com.vinayak_ecommerce.Ecommerce.model.Computer;
+import com.vinayak_ecommerce.Ecommerce.model.Studio;
 import com.vinayak_ecommerce.Ecommerce.repository.ComputerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,10 @@ import java.util.stream.Collectors;
 public class ComputerService {
 
     @Autowired
-    ComputerRepo computerRepo;
+    private ComputerRepo computerRepo;
+
+    @Autowired
+    private StudioService studioService;
 
     public Computer save(Computer computer) {
         return computerRepo.save(computer);
@@ -31,5 +35,33 @@ public class ComputerService {
     public List<Computer> getDefaultComputers() {
         List<Computer> computers = computerRepo.findAll();
         return computers.stream().filter(computer -> computer.getName()!= null && !computer.getName().isEmpty()).collect(Collectors.toList());
+    }
+
+    public Computer generateComputer(String studioId) {
+        Studio studio = studioService.getStudio();
+        Computer computer = new Computer();
+        computer.setName("");
+        computer.setGpu(studio.getGpu());
+        computer.setBody(studio.getBody());
+        computer.setCpu(studio.getCpu());
+        computer.setPsu(studio.getPsu());
+        computer.setRam(studio.getRam());
+        computer.setStorage(studio.getStorage());
+        computer.setMotherboard(studio.getMotherboard());
+        return computerRepo.save(computer);
+    }
+
+    public Computer createComputer(Computer computer) {
+        if (computer.getName().isEmpty()) {
+            computer.setName("");
+        }
+        return computerRepo.save(computer);
+    }
+
+    public Computer updateComputer(Computer computer) {
+        if (computer.getName().isEmpty()) {
+            computer.setName("");
+        }
+        return computerRepo.save(computer);
     }
 }

@@ -25,9 +25,9 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
 
-//    @OneToMany(mappedBy = "user")
-//    @JsonIgnore
-//    private List<Order> orderList;
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Order> orderList;
 
     @OneToOne(mappedBy = "user")
     @JsonIgnore

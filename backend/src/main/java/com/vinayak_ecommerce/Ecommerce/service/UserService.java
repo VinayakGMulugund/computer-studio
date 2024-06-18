@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -91,5 +92,9 @@ public class UserService implements UserDetailsService {
     public boolean userExists(User user) {
         User existingUser = userRepo.findByEmail(user.getEmail());
         return existingUser != null;
+    }
+
+    public Optional<User> getUserById(String id) {
+        return userRepo.findById(Long.valueOf(id));
     }
 }

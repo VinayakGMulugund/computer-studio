@@ -31,4 +31,19 @@ public class ComputerController {
     public Optional<Computer> getComputer(@PathVariable String id) {
         return computerService.getComputer(Long.parseLong((id)));
     }
+
+    @PostMapping("/{studioId}")
+    public Computer generateComputer(@PathVariable String studioId) {
+        return computerService.generateComputer(studioId);
+    }
+
+//    @PostMapping("")
+//    public Computer createComputer(@RequestBody Computer computer) {
+//        return computerService.createComputer(computer);
+//    }
+
+    @PutMapping("")
+    public Computer updateComputer(@RequestBody Computer computer) {
+        return computerService.updateComputer(computer);
+    }
 }
